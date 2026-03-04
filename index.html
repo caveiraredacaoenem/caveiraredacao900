@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TZ9V77VHC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7TZ9V77VHC');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desafio +900 na Redação ENEM - Cavaleiro da Redação</title>
@@ -49,6 +58,7 @@ graysoft: '#D3D3E0'
       opacity: 0;
     }
   </style>
+  
 </head>
 
 <body class="font-sans bg-dark text-white overflow-x-hidden">
@@ -63,11 +73,11 @@ graysoft: '#D3D3E0'
 
 <!-- HERO -->
 <section class="w-full px-6 pt-16 pb-24 sm:pt-24 sm:pb-32 max-w-5xl mx-auto">
-<div class="text-center space-y-6">
-<h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">Desafio +900 na Redação ENEM</h1>
-<p class="text-graysoft text-lg sm:text-xl max-w-2xl mx-auto">O único método direto, simples e comprovado que transforma qualquer estudante em alguém capaz de escrever para pontuar alto — mesmo começando do zero.</p>
-<a href="https://pay.cakto.com.br/a4axup6_668640" class="inline-block bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-primary/80 transition">Quero entrar no Desafio</a>
-</div>
+  <div class="text-center space-y-6">
+    <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">Desafio +900 na Redação ENEM</h1>
+    <p class="text-graysoft text-lg sm:text-xl max-w-2xl mx-auto">O único método direto, simples e comprovado que transforma qualquer estudante em alguém capaz de escrever para pontuar alto — mesmo começando do zero.</p>
+    <a href="https://pay.cakto.com.br/a4axup6_668640" class="ga-btn inline-block bg-primary text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-primary/80 transition">Quero entrar no Desafio</a>
+  </div>
 </section>
 
 <!-- IMGs -->
@@ -105,9 +115,8 @@ graysoft: '#D3D3E0'
                 </li>
             </ul>
             
-            <a href="https://pay.cakto.com.br/a4axup6_668640" 
-               class="inline-block px-8 py-4 bg-primary text-white font-bold text-xl rounded-xl transition duration-300 ease-in-out hover:bg-opacity-90 transform hover:scale-[1.02] shadow-xl shadow-primary/40">
-                Quero o Desafio +900 e Minha Vaga!
+            <a href="https://pay.cakto.com.br/a4axup6_668640" class="ga-btn inline-block px-8 py-4 bg-primary text-white font-bold text-xl rounded-xl transition duration-300 ease-in-out hover:bg-opacity-90 transform hover:scale-[1.02] shadow-xl shadow-primary/40">
+              Quero o Desafio +900 e Minha Vaga!
             </a>
         </div>
         
@@ -247,7 +256,7 @@ graysoft: '#D3D3E0'
   <h2 class="text-3xl font-bold mb-8">Pronto para Seu +900?</h2>
 
   <a href="https://pay.cakto.com.br/a4axup6_668640"
-     class="inline-block w-full sm:w-auto px-10 py-4 text-xl font-extrabold bg-azul-eletrico text-grafite-profundo rounded-xl hover:scale-105 transition duration-300 animate-pulse-electric shadow-[0_0_40px_-5px_rgba(0,194,255,0.7)]">
+     class="ga-btn inline-block w-full sm:w-auto px-10 py-4 text-xl font-extrabold bg-azul-eletrico text-grafite-profundo rounded-xl hover:scale-105 transition duration-300 animate-pulse-electric shadow-[0_0_40px_-5px_rgba(0,194,255,0.7)]">
      QUERO ACESSO IMEDIATO
   </a>
 
@@ -262,7 +271,7 @@ graysoft: '#D3D3E0'
     <p class="text-sm font-bold text-white sm:block">Acesso Completo + Bônus <span class="text-laranja-quente">LIMITADO</span></p>
 
     <a href="https://pay.cakto.com.br/a4axup6_668640"
-       class="w-full sm:w-auto px-6 py-2 text-lg font-extrabold bg-laranja-quente text-grafite-profundo rounded-lg hover:bg-azul-eletrico hover:text-white transition duration-200">
+       class="ga-btn w-full sm:w-auto px-6 py-2 text-lg font-extrabold bg-laranja-quente text-grafite-profundo rounded-lg hover:bg-azul-eletrico hover:text-white transition duration-200">
        COMPRE AGORA!
     </a>
   </div>
@@ -291,7 +300,17 @@ window.addEventListener("scroll", () => {
     ctaFloating.classList.add("cta-floating-hidden");
   }
 });
+  document.querySelectorAll('.ga-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const textoBotao = this.innerText.trim();
+    gtag('event', 'clique_checkout', {
+      'event_label': textoBotao,
+      'link_url': this.href
+    });
+  });
+});
 </script>
 
 </body>
 </html>
+
